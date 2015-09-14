@@ -1,0 +1,25 @@
+{% import "_includes/forms" as forms %}
+
+<div class="item">
+
+    {{ forms.textField({
+        label: 'Project ID'|t,
+        instructions: 'Value from Project ID field in the Settings tab of your Optimizely project'|t,
+        id: 'projectId',
+        name: 'projectId',
+        size: 20,
+        required: true,
+        value: settings.projectId,
+        errors: settings.getErrors('projectId')
+    }) }}
+
+    {{ forms.lightswitchField({
+        label: 'Automatically include Optimizely Snippet'|t,
+        instructions: 'Should the Optimizely snippet be automatically added to your HEAD tag',
+        id: 'automaticallyInclude',
+        name: 'automaticallyInclude',
+        on: settings.automaticallyInclude,
+        errors: settings.getErrors('automaticallyInclude')
+    }) }}
+
+</div>
