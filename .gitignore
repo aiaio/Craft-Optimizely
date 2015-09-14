@@ -1,3 +1,22 @@
-# Craft Storage (cache) [http://buildwithcraft.com/help/craft-storage-gitignore]
-/craft/storage/*
-!/craft/storage/logo/*
+# Misc files
+# ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea
+.log
+composer.phar
+**/.sass-cache
+**/.sass-cache/*
+**/.sass-cache/**
+*.map
+.cache
+.project
+.settings
+.tmproj
+.esproj
+nbproject
+*.sublime-workspace
+*.sublime-project
+*.komodoproject
+.komodotools
+_notes
