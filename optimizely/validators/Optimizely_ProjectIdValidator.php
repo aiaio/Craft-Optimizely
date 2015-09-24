@@ -18,9 +18,8 @@ class Optimizely_ProjectIdValidator extends \CValidator
 
         if (empty($projectId))
         {
-            $message = Craft::t('Project Id cannot be blank');
-            $this->addError($object, $attribute, $message);
-            return; // show only first error message
+            // we should allow empty Project ID, because it can be set in the configuration
+            return;
         }
 
         if (!ctype_digit($projectId))
