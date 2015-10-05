@@ -1,9 +1,17 @@
 {% import "_includes/forms" as forms %}
 
+{% macro configWarning() -%}
+    {{ "This is being overridden by the optimizelyProjectId config setting."|t|raw }}
+{%- endmacro %}
+
+{% from _self import configWarning %}
+
+
 <div class="item">
 
     {{ forms.textField({
         label: 'Project ID'|t,
+        warning: (craft.config.optimizelyProjectId ? configWarning()),
         instructions: 'Value from Project ID field in the Settings tab of your Optimizely project'|t,
         id: 'projectId',
         name: 'projectId',
